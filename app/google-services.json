@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "665807997162",
+    "firebase_url": "https://servicedeskassignment-57aad.firebaseio.com",
+    "project_id": "servicedeskassignment-57aad",
+    "storage_bucket": "servicedeskassignment-57aad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:665807997162:android:636e709a8be7919a862f93",
+        "android_client_info": {
+          "package_name": "com.example.servicedesk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "665807997162-3re6478il7c9c4lng8g83rqicl9d7mt0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.servicedesk",
+            "certificate_hash": "fdd7808058782b4441818fdd40b6b2f2651d6af3"
+          }
+        },
+        {
+          "client_id": "665807997162-8if1oedpm92922pvkb4rhu5koj6hnpqc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzvCLR5o5gr0N3MiNsg0cEWaHWDq8ZI5g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "665807997162-8if1oedpm92922pvkb4rhu5koj6hnpqc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardTicket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <TextView
+                    android:id="@+id/tvTicketTitle"
+                    android:layout_width="0dp"
+                    android:textSize="18sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:text="Title">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/tvTicketStatus"
+                    android:layout_width="0dp"
+                    android:textAlignment="textEnd"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Status">
+
+                </TextView>
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tvTicketId"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="#1">
+
+            </TextView>
+
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
