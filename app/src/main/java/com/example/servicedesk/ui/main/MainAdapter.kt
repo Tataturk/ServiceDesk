@@ -8,7 +8,7 @@ import com.example.servicedesk.R
 import com.example.servicedesk.model.Ticket
 import kotlinx.android.synthetic.main.card_ticket.view.*
 
-class MainAdapter(private val tickets:List<Ticket>) :
+class MainAdapter(private val tickets:List<Ticket>, private val onClick: (Ticket) -> Unit) :
     RecyclerView.Adapter<MainAdapter.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainAdapter.ViewHolder {
         return ViewHolder(
@@ -25,6 +25,12 @@ class MainAdapter(private val tickets:List<Ticket>) :
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)  {
+
+        init {
+            itemView.setOnClickListener {
+                onClick(tickets[adapterPosition])
+            }
+        }
         fun bind(ticket: Ticket)   {
             itemView.tvTicketId.text = ticket.ticketId.toString()
             itemView.tvTicketStatus.text = ticket.status.toString()

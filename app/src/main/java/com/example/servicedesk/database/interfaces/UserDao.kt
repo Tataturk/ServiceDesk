@@ -13,7 +13,7 @@ interface UserDao {
 
     @Transaction
     @Query("SELECT * FROM users WHERE userId = :id")
-    fun getUserWithTickets(id: Long): LiveData<List<User>>
+    fun getUser(id: String): LiveData<User>
 
 }
 
@@ -24,7 +24,7 @@ interface TicketDao {
     suspend fun insertTicket(ticket: Ticket)
 
     @Query("SELECT * FROM tickets")
-    fun getAllTickets(): LiveData<List<Ticket>>
+    fun getTickets(): LiveData<List<Ticket>>
 
     @Delete
     suspend fun deleteTicket(ticket: Ticket)
