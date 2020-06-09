@@ -30,4 +30,10 @@ class MainActivityViewModel(application: Application) :
         }
     }
 
+    fun insertTicket(ticket: Ticket)    {
+        ioScope.launch {
+            userRepository.insertTicket(ticket)
+        }
+    }
+
 }

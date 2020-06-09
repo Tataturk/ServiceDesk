@@ -10,14 +10,14 @@ import java.util.*
 
 @Parcelize
 @Entity(tableName = "tickets")
-data class Ticket (
-    var requester: Long,
+data class Ticket(
+    var requester: String,
     var title: String,
     var category: String,
     var description: String,
     var status: Int,
     var date: Date,
-    @PrimaryKey var ticketId: Long? = null
+    @PrimaryKey(autoGenerate = true) var ticketId: Long? = null
 ) : Parcelable
 
 /*

@@ -10,7 +10,6 @@ import com.example.servicedesk.database.interfaces.UserDao
 import com.example.servicedesk.model.Comment
 import com.example.servicedesk.model.Ticket
 import com.example.servicedesk.model.User
-import com.example.servicedesk.model.UserTickets
 
 @TypeConverters(Converters::class)
 @Database(entities = [User::class,Ticket::class,Comment::class], version = 1, exportSchema = false)

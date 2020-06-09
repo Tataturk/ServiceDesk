@@ -32,7 +32,7 @@ class MainAdapter(private val tickets:List<Ticket>, private val onClick: (Ticket
             }
         }
         fun bind(ticket: Ticket)   {
-            itemView.tvTicketId.text = ticket.ticketId.toString()
+            itemView.tvTicketId.text = "#" + ticket.ticketId.toString()
             itemView.tvTicketStatus.text = ticket.status.toString()
             itemView.tvTicketTitle.text = ticket.title
 
