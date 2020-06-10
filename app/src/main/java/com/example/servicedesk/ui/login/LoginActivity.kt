@@ -51,6 +51,7 @@ class LoginActivity : AppCompatActivity() {
                     val intent = Intent(this@LoginActivity,MainActivity::class.java)
                     intent.putExtra("user",user)
                     startActivity(intent)
+                    finish()
                 }
                 else  {
                     // Sign-in failed

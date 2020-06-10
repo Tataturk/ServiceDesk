@@ -1,15 +1,28 @@
 <resources>
     <string name="app_name">ServiceDesk</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_logout">Sign out</string>
     <!-- Login -->
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="title_activity_add">AddActivity</string>
+    <!-- Main -->
+    <string name="add">NEW</string>
     <!-- Add Ticket -->
     <string name="title">Title</string>
     <string name="description">Description</string>
     <string name="category">Category</string>
     <string name="create_button">CREATE TICKET</string>
-    
+    <string name="choose_priority">Choose priority</string>
+    <string name="prio_low">Low</string>
+    <string name="prio_medium">Medium</string>
+    <string name="prio_high">High</string>
+    <string name="prio_critical">Critical</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <!-- Detail -->
+    <string name="comments">Comments</string>
+    <string name="newcomment">New Comment</string>
+    <string name="status">Priority:</string>
+    <!-- Add Comment -->
+    <string name="create_comment_buttom">CREATE COMMENT</string>
 </resources>

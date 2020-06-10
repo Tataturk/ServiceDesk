@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.example.servicedesk.database.interfaces.CommentDao
 import com.example.servicedesk.database.interfaces.TicketDao
 import com.example.servicedesk.database.interfaces.UserDao
 import com.example.servicedesk.model.Comment
@@ -17,6 +18,7 @@ import com.example.servicedesk.model.User
 abstract class ServiceDeskRoomDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
     abstract fun ticketDao(): TicketDao
+    abstract fun commentDao(): CommentDao
 
     companion object    {
         private const val DATABASE_NAME = "SERVICEDESK_DATABASE"

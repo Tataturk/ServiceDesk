@@ -3,12 +3,10 @@ package com.example.servicedesk.ui.main
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.lifecycle.LiveData
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,12 +15,15 @@ import com.example.servicedesk.R
 import com.example.servicedesk.model.Ticket
 import com.example.servicedesk.ui.add.AddActivity
 import com.example.servicedesk.ui.add.EXTRA_TICKET
-
+import com.example.servicedesk.ui.detail.DetailActivity
+import com.example.servicedesk.ui.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
+
 
 const val TICKET_REQUEST_CODE = 100
 class MainActivity : AppCompatActivity() {
@@ -64,10 +65,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onTicket(ticket: Ticket)   {
-        Toast.makeText(this,ticket.title,Toast.LENGTH_SHORT).show()
-        /*val intent = Intent(this, TicketInfoActivity::class.java)
+        val intent = Intent(this, DetailActivity::class.java)
         intent.putExtra("EXTRA_TICKET", ticket)
-        startActivityForResult(intent,TICKET_INFO_CODE)*/
+        startActivity(intent)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -91,9 +91,17 @@ class MainActivity : AppCompatActivity() {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+
+        if (item.itemId == R.id.action_logout)  {onLogout()}
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.action_logout -> true
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun onLogout()  {
+        Firebase.auth.signOut()
+        startActivity(Intent(this@MainActivity, LoginActivity::class.java))
+        finish()
     }
 }

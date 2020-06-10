@@ -4,12 +4,15 @@ import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
+import java.util.*
 
 @Parcelize
 @Entity(tableName = "comments")
 data class Comment (
-    var commenttext: String,
-    var commenter: Long,
+    var comment: String,
+    var commenterId: String,
+    var commenterName: String,
+    var date: Date,
     var ticket: Long,
-    @PrimaryKey var commentId: Long? = null
+    @PrimaryKey(autoGenerate = true) var commentId: Long? = null
 ) : Parcelable

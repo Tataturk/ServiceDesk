@@ -11,18 +11,19 @@ import java.util.*
 @Parcelize
 @Entity(tableName = "tickets")
 data class Ticket(
+    var requesterId: String,
     var requester: String,
     var title: String,
     var category: String,
     var description: String,
-    var status: Int,
+    var status: String,
     var date: Date,
     @PrimaryKey(autoGenerate = true) var ticketId: Long? = null
 ) : Parcelable
 
-/*
-data class Ticketcomments(
-    @Embedded var user: User,
+
+/*data class Ticketcomments(
+    @Embedded var ticket: Ticket,
     @Relation(
         parentColumn = "ticketId",
         entityColumn = "ticket"

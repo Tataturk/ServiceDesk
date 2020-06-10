@@ -2,6 +2,7 @@ package com.example.servicedesk.database.interfaces
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.example.servicedesk.model.Comment
 import com.example.servicedesk.model.Ticket
 import com.example.servicedesk.model.User
 
@@ -28,4 +29,15 @@ interface TicketDao {
 
     @Delete
     suspend fun deleteTicket(ticket: Ticket)
+}
+
+@Dao
+interface CommentDao    {
+
+    @Insert
+    suspend fun insertComment(comment:Comment)
+
+    @Transaction
+    @Query("SELECT * FROM comments WHERE ticket = :id")
+    fun getComments(id: Long): LiveData<List<Comment>>
 }
